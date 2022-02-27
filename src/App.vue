@@ -5,6 +5,12 @@
   </div>
   <router-view />
 </template>
+<script>
+export default {
+  setup() {},
+};
+</script>
+
 
 <style>
 #app {
