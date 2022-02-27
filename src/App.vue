@@ -1,13 +1,18 @@
 <template>
-  <div id="nav">
+    <div id="nav">
     <router-link to="/">Home</router-link> |
     <router-link to="/about">About</router-link>
   </div>
+ <!--  <app-nav></app-nav> -->
   <router-view />
 </template>
 <script>
+//import AppNav from './components/AppNav';
 export default {
   setup() {},
+  components: {
+    // 'app-nav': AppNav,
+  },
 };
 </script>
 
