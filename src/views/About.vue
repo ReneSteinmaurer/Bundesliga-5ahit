@@ -9,14 +9,9 @@
     </p>
     <hr class="my-4" />
     <h3>Beteiligte Teams/Personen</h3>
-    <!--
 
-  <img
-                  src="https://avatars.githubusercontent.com/u/2076129?v=4"
-                  height="30"
-                />
- -->
     <div class="container my-4">
+      <!-- https://getbootstrap.com/docs/5.0/components/list-group/ -->
       <ol class="list-group list-group-numbered">
         <li
           class="
