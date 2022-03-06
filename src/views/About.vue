@@ -7,8 +7,60 @@
       Daten werden vom openligadb-Portal (https://www.openligadb.de/) zur
       Verfügung gestellt..
     </p>
-    <p class="lead">
-      <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
-    </p>
+    <hr class="my-4" />
+    <h3>Beteiligte Teams/Personen</h3>
+    <!--
+
+  <img
+                  src="https://avatars.githubusercontent.com/u/2076129?v=4"
+                  height="30"
+                />
+ -->
+    <div class="container my-4">
+      <ol class="list-group list-group-numbered">
+        <li
+          class="
+            list-group-item
+            d-flex
+            justify-content-between
+            align-items-start
+          "
+        >
+          <div class="ms-2 me-auto">
+            <div class="fw-bold">Projektleitung</div>
+            Helml/Reitinger
+          </div>
+          <span class="badge bg-primary rounded-pill">2</span>
+        </li>
+        <li
+          class="
+            list-group-item
+            d-flex
+            justify-content-between
+            align-items-start
+          "
+        >
+          <div class="ms-2 me-auto">
+            <div class="fw-bold">Team1</div>
+            X Y
+          </div>
+          <span class="badge bg-primary rounded-pill">2</span>
+        </li>
+        <li
+          class="
+            list-group-item
+            d-flex
+            justify-content-between
+            align-items-start
+          "
+        >
+          <div class="ms-2 me-auto">
+            <div class="fw-bold">Team 3</div>
+            Z U V
+          </div>
+          <span class="badge bg-primary rounded-pill">3</span>
+        </li>
+      </ol>
+    </div>
   </div>
 </template>
