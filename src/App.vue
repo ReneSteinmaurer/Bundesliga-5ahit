@@ -10,8 +10,13 @@
 </template>
 <script>
 import AppNav from './views/AppNav';
+import { provide } from 'vue';
+
 export default {
-  setup() {},
+  setup() {
+    //https://vuejs.org/guide/components/provide-inject.html#provide
+    provide('baseURL', 'https://www.openligadb.de/api/');
+  },
   components: {
     'app-nav': AppNav,
   },

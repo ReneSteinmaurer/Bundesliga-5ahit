@@ -54,25 +54,38 @@
                 data-bs-toggle="dropdown"
                 aria-expanded="false"
               >
-                Interessantes
+                Details
               </a>
               <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                 <li><a class="dropdown-item" href="#">Alle Teams</a></li>
-                <li><a class="dropdown-item" href="#">Torschützen</a></li>
+                <li><a class="dropdown-item" href="#">Hinrundenspiele</a></li>
+                <li><a class="dropdown-item" href="#">Rückrundenspiele</a></li>
                 <li><hr class="dropdown-divider" /></li>
                 <li>
-                  <a class="dropdown-item" href="#">Spieleinteilung</a>
+                  <a class="dropdown-item" href="#">Spiele 2er Teams</a>
                 </li>
               </ul>
             </li>
-            <li class="nav-item">
+            <li class="nav-item dropdown">
               <a
-                class="nav-link disabled"
+                class="nav-link dropdown-toggle"
                 href="#"
-                tabindex="-1"
-                aria-disabled="true"
-                >Zusatz</a
+                id="navbarDropdown"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
               >
+                Statistiken
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <li><a class="dropdown-item" href="#">Scorer</a></li>
+                <li><a class="dropdown-item" href="#">Zuschauer </a></li>
+                <li><a class="dropdown-item" href="#">Penalties</a></li>
+                <li><hr class="dropdown-divider" /></li>
+                <li>
+                  <a class="dropdown-item" href="#">Alle Spieler</a>
+                </li>
+              </ul>
             </li>
             <li class="nav-item">
               <router-link
@@ -106,3 +119,4 @@ export default {
   setup() {},
 };
 </script>
+

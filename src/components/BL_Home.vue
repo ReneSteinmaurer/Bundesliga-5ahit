@@ -1,6 +1,7 @@
 <template>
-  <div class="hello">
-    <h1 class="text-center">{{ msg }}</h1>
+  <div>
+    <!--https://getbootstrap.com/docs/5.0/content/tables/ -->
+    <h1 class="text-center">Tabellenstand {{ saison }}</h1>
     <div class="row justify-content-center">
       <div class="col-auto">
         <table class="table table-responsive">
@@ -41,16 +42,13 @@
 </template>
 
 <script>
-
 export default {
   name: 'Deutsche Bundesliga',
   props: {
-    msg: String,
+    saison: String,
     teams: Object,
   },
-  setup() {
-    
-  },
+  setup() {},
 };
 </script>
 
