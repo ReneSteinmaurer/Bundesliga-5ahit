@@ -39,8 +39,8 @@
               "
             >
               <div class="ms-2 me-auto">
-                <div class="fw-bold">Team1</div>
-                X Y
+                <div class="fw-bold">Aktueller Spieltag</div>
+                Bramberger,Lattner,Modl,
               </div>
               <span class="badge bg-primary rounded-pill">2</span>
             </li>
@@ -53,10 +53,94 @@
               "
             >
               <div class="ms-2 me-auto">
-                <div class="fw-bold">Team 3</div>
-                Z U V
+                <div class="fw-bold">Alle Teams</div>
+                Erk,Mach
               </div>
-              <span class="badge bg-primary rounded-pill">3</span>
+              <span class="badge bg-primary rounded-pill">2</span>
+            </li>
+            <li
+              class="
+                list-group-item
+                d-flex
+                justify-content-between
+                align-items-start
+              "
+            >
+              <div class="ms-2 me-auto">
+                <div class="fw-bold">Hinrundenspiele</div>
+                Friedl,Kronberger
+              </div>
+              <span class="badge bg-primary rounded-pill">2</span>
+            </li>
+            <li
+              class="
+                list-group-item
+                d-flex
+                justify-content-between
+                align-items-start
+              "
+            >
+              <div class="ms-2 me-auto">
+                <div class="fw-bold">Rückrundenspiele</div>
+                Hyseni,Kriesmann
+              </div>
+              <span class="badge bg-primary rounded-pill">2</span>
+            </li>
+            <li
+              class="
+                list-group-item
+                d-flex
+                justify-content-between
+                align-items-start
+              "
+            >
+              <div class="ms-2 me-auto">
+                <div class="fw-bold">Spiele 2er Teams</div>
+                Rumpfhuber,Schmidtsberger
+              </div>
+              <span class="badge bg-primary rounded-pill">2</span>
+            </li>
+            <li
+              class="
+                list-group-item
+                d-flex
+                justify-content-between
+                align-items-start
+              "
+            >
+              <div class="ms-2 me-auto">
+                <div class="fw-bold">Topscorer</div>
+                Demir,Serifi
+              </div>
+              <span class="badge bg-primary rounded-pill">2</span>
+            </li>
+            <li
+              class="
+                list-group-item
+                d-flex
+                justify-content-between
+                align-items-start
+              "
+            >
+              <div class="ms-2 me-auto">
+                <div class="fw-bold">Zuschauer</div>
+                Ruhland,Schmied
+              </div>
+              <span class="badge bg-primary rounded-pill">2</span>
+            </li>
+            <li
+              class="
+                list-group-item
+                d-flex
+                justify-content-between
+                align-items-start
+              "
+            >
+              <div class="ms-2 me-auto">
+                <div class="fw-bold">Alle Spieler</div>
+                Dragecevic
+              </div>
+              <span class="badge bg-primary rounded-pill">2</span>
             </li>
           </ol>
         </div>
