@@ -37,31 +37,24 @@
                     <option value="bl1">Bundesliga</option>
                     <option value="bl2">2. Liga</option>
                     <option value="bl3">3. Liga</option>
+                    <option value="uefacl">CL</option>
                   </select>
                 </div>
                 <div class="mb-3 form-control-sm">
                   <label for="selSaison" class="form-label">Saison</label>
-                  <select
-                    class="form-select"
-                    aria-label="selSaison"
+                  <vue-select
                     v-model="saison"
-                  >
-                    <option selected>2021/22</option>
-                    <option value="2021">2021/22</option>
-                    <option value="2020">2020/21</option>
-                    <option value="2019">2019/20</option>
-                  </select>
+                    :options="saisonOptions"
+                  ></vue-select>
                 </div>
                 <div class="mb-3 form-control-sm">
                   <label for="loginInputSpieltag" class="form-label"
                     >Spieltag</label
                   >
-                  <input
-                    type="text"
-                    class="form-control"
-                    id="loginInputSpieltag"
+                  <vue-select
                     v-model="spieltag"
-                  />
+                    :options="spieltagOptions"
+                  ></vue-select>
                 </div>
               </form>
             </div>
@@ -78,30 +71,97 @@
 <script>
 // @ is an alias to /src
 import BL_Home from '@/components/BL_Home.vue';
-import { onMounted, ref, inject, watch, provide } from 'vue';
+import { onMounted, ref, computed, watch, inject } from 'vue';
+import VueSelect from 'vue-next-select';
+import 'vue-next-select/dist/index.min.css';
+import { useStore } from 'vuex';
 
 export default {
   name: 'Home',
   components: {
     BL_Home,
+    VueSelect,
   },
   setup() {
-    let liga = ref('bl1');
-    let saison = ref('2021');
-    let spieltag = ref('1');
-    let errorMess = ref('');
+    const store = useStore();
+    //https://vuex.vuejs.org/guide/forms.html#two-way-computed-property
+    let liga = computed({
+      get() {
+        return store.getters.getLiga;
+      },
+      set: (value) => {
+        store.commit('setLiga', value);
+      },
+    });
+    liga.value = 'bl1';
+    let saison = computed({
+      get: () => {
+        return store.getters.getSaison;
+      },
+      set: (value) => {
+        console.log('set saison ' + value);
+        store.commit('setSaison', value);
+      },
+    });
+    saison.value = '2021';
+    let spieltag = computed({
+      get: () => {
+        return store.getters.getSpieltag;
+      },
+      set: (value) => {
+        console.log('set spieltag ' + value);
+        store.commit('setSpieltag', value);
+      },
+    });
+    spieltag.value = '1';
+    let errorMess = computed({
+      get: () => {
+        return store.getters.getSpieltag;
+      },
+      set: (value) => {
+        store.commit('setError', value);
+      },
+    });
+    errorMess.value = '';
     //https://vuejs.org/guide/components/provide-inject.html#provide
     const baseURL = inject('baseURL');
+    let spieltagOptions = ref([
+      1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21,
+      22, 23, 24, 25, 27, 29, 29, 30, 31, 32, 33, 34,
+    ]);
 
-    provide('liga', liga);
+    let saisonOptions = [
+      '2021',
+      '2020',
+      '2019',
+      '2018',
+      '2017',
+      '2016',
+      '2015',
+      '2014',
+      '2013',
+      '2012',
+      '2011',
+      '2010',
+    ];
+    /*
+CL:
+
+Spielplan: https://www.openligadb.de/Spielplan/4505/7
+https://www.openligadb.de/Ergebnisse/4505/1
+leider uneinheitliches API
+*/
+
+    /*  provide('liga', liga);
     provide('saison', saison);
     provide('spieltag', spieltag);
-    provide('error', errorMess);
+    provide('error', errorMess); */
 
     let teams = ref([{}]);
 
     function updateTabelle() {
       //https://github.com/OpenLigaDB/OpenLigaDB-Samples
+      console.log('Liga: ' + liga.value);
       let url = baseURL + 'getbltable/' + liga.value + '/' + saison.value;
       fetch(url)
         .then((res) => res.json())
@@ -129,10 +189,11 @@ export default {
       //https://www.netlify.com/blog/2021/01/29/deep-dive-into-the-vue-composition-apis-watch-method/
       //https://vuejs.org/api/reactivity-core.html
       watch(liga, (currentValue, oldVal) => {
-        //console.log('===WATCH::Liga: ' + currentValue + ', ' + oldVal);
+        console.log('===WATCH::Liga: ' + currentValue + ', ' + oldVal);
         if (currentValue != oldVal) updateTabelle();
       });
       watch(saison, (currentValue, oldVal) => {
+        console.log('===WATCH::Saison: ' + currentValue + ', ' + oldVal);
         if (currentValue != oldVal) updateTabelle();
       });
       watch(spieltag, (currentValue, oldVal) => {
@@ -147,6 +208,9 @@ export default {
       saison,
       updateTabelle,
       errorMess,
+      spieltagOptions,
+      VueSelect,
+      saisonOptions,
     };
   },
 };

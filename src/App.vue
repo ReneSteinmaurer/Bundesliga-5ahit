@@ -12,6 +12,7 @@
 import AppNav from './views/AppNav';
 import { provide } from 'vue';
 
+
 export default {
   setup() {
     //https://vuejs.org/guide/components/provide-inject.html#provide

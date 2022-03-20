@@ -148,3 +148,12 @@
     </div>
   </div>
 </template>
+<script>
+import { inject } from 'vue';
+export default {
+  setup() {
+    let saison = inject('saison');
+    console.log('Saison: ' + saison);
+  },
+};
+</script>
