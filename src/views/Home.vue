@@ -99,7 +99,6 @@ export default {
         return store.getters.getSaison;
       },
       set: (value) => {
-        console.log('set saison ' + value);
         store.commit('setSaison', value);
       },
     });
@@ -109,7 +108,6 @@ export default {
         return store.getters.getSpieltag;
       },
       set: (value) => {
-        console.log('set spieltag ' + value);
         store.commit('setSpieltag', value);
       },
     });
@@ -189,11 +187,9 @@ leider uneinheitliches API
       //https://www.netlify.com/blog/2021/01/29/deep-dive-into-the-vue-composition-apis-watch-method/
       //https://vuejs.org/api/reactivity-core.html
       watch(liga, (currentValue, oldVal) => {
-        console.log('===WATCH::Liga: ' + currentValue + ', ' + oldVal);
         if (currentValue != oldVal) updateTabelle();
       });
       watch(saison, (currentValue, oldVal) => {
-        console.log('===WATCH::Saison: ' + currentValue + ', ' + oldVal);
         if (currentValue != oldVal) updateTabelle();
       });
       watch(spieltag, (currentValue, oldVal) => {
