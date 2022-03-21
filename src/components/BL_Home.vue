@@ -1,71 +1,72 @@
 <template>
-  <div>
-    <!--https://getbootstrap.com/docs/5.0/content/tables/ -->
-    <h1 class="text-center">Tabellenstand {{ saison }}</h1>
-    <div class="row justify-content-center">
-      <div class="col-auto">
-        <table class="table table-responsive">
-          <thead>
-            <tr>
-              <td>Platz</td>
-              <td></td>
-              <td>Verein</td>
-              <td>Sp</td>
-              <td>S</td>
-              <td>U</td>
-              <td>N</td>
-              <td>T</td>
-              <td>GT</td>
-              <td>Pkte</td>
-            </tr>
-          </thead>
-          <tbody>
-            <tr v-for="(item, index) in teams" :key="index">
-              <td>{{ index + 1 }}</td>
-              <td>
-                <img :src="item.TeamIconUrl" height="30" />
-              </td>
-              <td>{{ item.ShortName }}</td>
-              <td>{{ item.Matches }}</td>
-              <td>{{ item.Won }}</td>
-              <td>{{ item.Draw }}</td>
-              <td>{{ item.Lost }}</td>
-              <td>{{ item.Goals }}</td>
-              <td>{{ item.OpponentGoals }}</td>
-              <td>{{ item.Points }}</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
+    <div class="hello">
+        <h1>{{ msg }}</h1>
+        <h2>Übersicht</h2>
     </div>
-  </div>
+
+    <table class="table table-striped table-dark">
+        <thead>
+        <tr>
+            <th scope="col">Platz</th>
+            <th scope="col">Verein</th>
+            <th scope="col">SP</th>
+            <th scope="col">S</th>
+            <th scope="col">U</th>
+            <th scope="col">N</th>
+            <th scope="col">GT</th>
+            <th scope="col">Pkte</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <th scope="row">1</th>
+            <td>Mark</td>
+            <td>Otto</td>
+            <td>@mdo</td>
+        </tr>
+        <tr>
+            <th scope="row">2</th>
+            <td>Jacob</td>
+            <td>Thornton</td>
+            <td>@fat</td>
+        </tr>
+        <tr>
+            <th scope="row">3</th>
+            <td>Larry</td>
+            <td>the Bird</td>
+            <td>@twitter</td>
+        </tr>
+        </tbody>
+    </table>
 </template>
 
 <script>
-export default {
-  name: 'Deutsche Bundesliga',
-  props: {
-    saison: String,
-    teams: Object,
-  },
-  setup() {},
-};
+    export default {
+        name: 'Deutsche Bundesliga',
+        props: {
+            msg: String,
+            teams: Object
+        },
+    };
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-h3 {
-  margin: 40px 0 0;
-}
-ul {
-  list-style-type: none;
-  padding: 0;
-}
-li {
-  display: inline-block;
-  margin: 0 10px;
-}
-a {
-  color: #42b983;
-}
+    h3 {
+        margin: 40px 0 0;
+    }
+
+    ul {
+        list-style-type: none;
+        padding: 0;
+    }
+
+    li {
+        display: inline-block;
+        margin: 0 10px;
+    }
+
+    a {
+        color: #42b983;
+    }
 </style>
